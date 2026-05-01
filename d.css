@@ -1,0 +1,347 @@
+body {
+    background: #0f3028;
+    margin: 0;
+    padding: 0;
+
+}
+
+#freshjuice-hero {
+    padding-top: 80px;
+    background: #0f3028;
+    text-align: center;
+    padding-bottom: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fresh-hero-eyebrow {
+    display: inline-block;
+    border: 1px solid #c89b3c;
+    color: #c89b3c;
+    padding: 6px 14px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-family: 'Jost', sans-serif;
+}
+
+.fresh-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    font-weight: 400;
+    color: #eaeaea;
+    margin: 0 0 10px;
+    line-height: 1.2;
+}
+
+.fresh-hero-title em {
+    display: block;
+    color: #d89b3c;
+    font-style: italic;
+}
+
+.products-head1 {
+    color: #f4c27a;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 60px 0 20px;
+    letter-spacing: 1px;
+    grid-column: 1 / -1;
+}
+
+.products-head1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #c9892a;
+    margin: 20px auto 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 40px 80px;
+}
+
+.product-card {
+    width: 98%;
+    height: 435px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 48, 40, 0.95) 0%, rgba(15, 48, 40, 0.4) 40%, rgba(15, 48, 40, 0) 100%);
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+
+.product-card:hover::before {
+    background: linear-gradient(to top, rgba(15, 48, 40, 0.95) 0%, rgba(15, 48, 40, 0.6) 50%, rgba(15, 48, 40, 0.2) 100%);
+}
+
+.products-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 25px 30px;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.products-name {
+    color: #f4c27a;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .products-name {
+    transform: scale(1.05);
+}
+
+.products-desc {
+    color: #e8ddd0;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.products-price {
+    color: #d89b3c;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 0 0;
+    letter-spacing: 1px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d89b3c;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid rgba(216, 155, 60, 0.3);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background: rgba(15, 48, 40, 0.6);
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background: #d89b3c;
+    color: #0b2f25;
+    border-color: #d89b3c;
+}
+
+.back-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+    transform: translateX(-4px);
+}
+
+.without-btn {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0b2f25;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid rgba(216, 155, 60, 0.3);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    background: #c9892a;
+    z-index: 10;
+    margin-top: 290px;
+    margin-left: 785px;
+    font-weight: 600;
+}
+
+#RectangleWaffle {
+    background-image: url(images/waffler.png);
+}
+
+#WafflePites {
+    background-image: url(images/waffleamall.png);
+}
+
+#WafflePites1 {
+    background-image: url(images/waafflelarge.png);
+}
+
+#WaffleBubbles {
+    background-image: url(images/wafflebub.png);
+}
+
+#FottchiniCrepe {
+    background-image: url(images/Fottchini\ Crepe.png);
+}
+
+#CrepeSushi {
+    background-image: url(images/crepe\ suchi.png);
+}
+
+#CrepeSushi1 {
+    background-image: url(images/wafflesuchi1.png);
+}
+
+#CrepeSushi2 {
+    background-image: url(images/waffil2.png);
+}
+
+#Donuts {
+    background-image: url(images/donuts.png);
+}
+
+#Cinnabon {
+    background-image: url(images/cinnabon.png);
+}
+
+#Cookies {
+    background-image: url(images/cookies.png);
+}
+
+#Pancake2 {
+    background-image: url(images/20.png);
+}
+
+#Pancake1 {
+    background-image: url(images/10.png);
+}
+
+#RocherCake {
+    background-image: url(images/rochercake.png);
+}
+
+#ChocolateWalnut {
+    background-image: url(images/3eeeen.png);
+}
+
+
+#NutellaCake {
+    background-image: url(images/nuttelacake.png);
+}
+
+#LotusCake {
+    background-image: url(images/lotuscake.png);
+}
+
+#RedVelvet {
+    background-image: url(images/redvelvet.png);
+}
+
+#KinderCake {
+    background-image: url(images/kindercake.png);
+}
+
+#LotusCheesecake {
+    background-image: url(images/lotuscheese.png);
+}
+
+#Cheesecake {
+    background-image: url(images/cheesecake.png);
+}
+
+#SanSebastian {
+    background-image: url(images/san.png);
+}
+
+#MiniCake {
+    background-image: url(images/mimi.png);
+}
+
+#MoltenNutella {
+    background-image: url(images/multn.png);
+}
+
+#MoltenLotus {
+    background-image: url(images/moltunlotus.png);
+}
+
+#MiniTiramisu {
+    background-image: url(images/mtra.png);
+}
+
+#MiniCheesecake {
+    background-image: url(images/minicheeeese.png);
+}
+
+#FloutsCake {
+    background-image: url(images/flouts.png);
+}
+
+.footer-bottom {
+    display: flex;
+    border-top: 1px solid #ffffff22;
+    margin-top: 40px;
+    padding-top: 20px;
+
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #f5efe666;
+    margin: auto;
+}
+
+.footer-copy span {
+    color: #c9892a;
+}
