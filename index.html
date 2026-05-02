@@ -1,43 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
-    <title>Pavlova - Desserts & Coffee</title>
+    <title>Pavlova - Desserts &amp; Coffee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700&display=swap"
         rel="stylesheet" />
-
 </head>
 
 <body>
     <nav id="navbar">
-        <a href="#hero" class="nav-logo">Pavlova <span>& Co.</span></a>
+        <a href="#hero" class="nav-logo">Pavlova <span>&amp; Co.</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#categories">MENU</a></li>
             <li><a href="#testimonials">REVIEWS</a></li>
             <li><a href="#contact">VISIT US</a></li>
         </ul>
-        <button class="order-btn" onclick="location.href='#categories'">
+        <button class="order-btn desktop-order-btn" onclick="location.href='#categories'">
             ORDER NOW
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </nav>
 
     <section id="hero">
         <div class="hero-content">
-            <span class="hero-eyebrow">Desserts &amp; Coffee — Est. 2018</span>
+            <span class="hero-eyebrow">Desserts &amp; Coffee &mdash; Est. 2018</span>
             <h1 class="hero-title hero-arabic-title">
                 مما طاب<br />
                 <span>وزكا</span>
             </h1>
-            <pre class="hero-desc">
-                لحظتك… ليها طعم عندنا
-            </pre>
+            <pre class="hero-desc">لحظتك… ليها طعم عندنا</pre>
             <div class="hero-btns">
                 <a href="#categories" class="btn-primary">View Menu</a>
             </div>
@@ -52,7 +54,7 @@
         <div class="about-inner">
             <div class="about-img">
                 <div class="img-placeholder">
-                    <img src="images/480829805_656907283572345_5816786938367316418_n.jpg" alt="">
+                    <img src="images/480829805_656907283572345_5816786938367316418_n.jpg" alt="Pavlova cafe">
                 </div>
                 <div class="badge">
                     <div class="badge-num">7</div>
@@ -64,13 +66,9 @@
                 <h2>From our hands to your cup</h2>
                 <p>
                     Pavlova is all about simple moments.
-
                     Good coffee. Fresh desserts. A place to relax.
-
                     Made with care, served with love.
-
                     Just what you need, every day.
-
                 </p>
             </div>
         </div>
@@ -84,63 +82,70 @@
                 Each item is crafted fresh daily, marrying classic techniques with
                 seasonal inspirations.
             </pre>
+            <div class="swipe-indicator">
+                <span>Swipe to explore</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                </svg>
+            </div>
         </div>
         <div class="categories-grid">
             <div class="categories-card1" onclick="location.href='fresh.html'">
                 <div class="categories-body">
                     <div class="categories-name">FRESH JUICES</div>
-                    <div class="categories-desc">Squeeze the moment
-                    </div>
+                    <div class="categories-desc">Squeeze the moment</div>
                 </div>
             </div>
             <div class="categories-card2" onclick="location.href='smoothies.html'">
                 <div class="categories-body">
                     <div class="categories-name">SMOOTHIES</div>
-                    <div class="categories-desc">THE SMOOTH SIDE
-                    </div>
+                    <div class="categories-desc">THE SMOOTH SIDE</div>
                 </div>
             </div>
             <div class="categories-card3" onclick="location.href='milkshake.html'">
                 <div class="categories-body">
                     <div class="categories-name">MILKSHAKES</div>
-                    <div class="categories-desc">MILK MAGIC
-                    </div>
+                    <div class="categories-desc">MILK MAGIC</div>
                 </div>
             </div>
         </div>
-        <div class="menu-action" style="text-align: center; margin-top: 60px;">
-            <a href="fullmenu.html" class="btn-primary" style="display: inline-block;">View Full Menu</a>
+        <div class="menu-action">
+            <a href="fullmenu.html" class="btn-primary btn-large">View Full Menu</a>
         </div>
     </section>
-
 
     <section id="testimonials">
         <div class="testi-inner">
             <div class="testi-head">
-                <span class="section-tag">GALLARY</span>
+                <span class="section-tag">GALLERY</span>
                 <h2 class="section-title">Made for your kind of mood</h2>
             </div>
-
-
-            <div class="card">
-                <p style="background-image: url(images/Image\ \(5\).jpg);"><span>HOVER ME</span></p>
-                <p style="background-image: url(images/Image\ \(6\).jpg);"><span>HOVER ME</span></p>
-                <p style="background-image: url(images/Image\ \(7\).jpg);"><span>HOVER ME</span></p>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-large">
+                    <img src="images/Image (5).jpg" alt="Pavlova gallery 1" loading="lazy">
+                    <div class="gallery-overlay"><span>Crafted with love</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Image (6).jpg" alt="Pavlova gallery 2" loading="lazy">
+                    <div class="gallery-overlay"><span>Sweet moments</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Image (7).jpg" alt="Pavlova gallery 3" loading="lazy">
+                    <div class="gallery-overlay"><span>Fresh daily</span></div>
+                </div>
             </div>
         </div>
     </section>
-
-
-
-
 
     <section id="contact">
         <div class="contact-inner">
             <div class="contact-text">
                 <span class="section-tag1">FIND US</span>
                 <h2 class="section-title">Come In, Stay Awhile</h2>
-                <p>We'd love to welcome you. Step into a world of warmth, elegance, and flavors</p>
-                <p id="abcd">worth lingering over. Our doors are always open for you.</p>
+                <p>We'd love to welcome you. Step into a world of warmth, elegance, and flavors worth lingering over.
+                    Our doors are always open for you.</p>
                 <div class="contact-items">
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
@@ -149,7 +154,7 @@
                             <div class="contact-info-val">Bank Masr Street, KomHamada, Egypt</div>
                             <div class="contact-info-val">Bank Masr Street Behind Alban Elshakawi, KomHamada, Egypt
                             </div>
-                            <div class="contact-info-val">Kids park Street , Itay Elbarod, Egypt</div>
+                            <div class="contact-info-val">Kids park Street, Itay Elbarod, Egypt</div>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -172,7 +177,7 @@
                         <div class="contact-icon">🕐</div>
                         <div>
                             <div class="contact-info-label">Hours</div>
-                            <div class="contact-info-val">Daily 8:00 AM – 11:00 PM</div>
+                            <div class="contact-info-val">Daily 8:00 AM &ndash; 11:00 PM</div>
                         </div>
                     </div>
                 </div>
@@ -207,46 +212,31 @@
                 </div>
             </div>
 
-
-
             <div class="map-card">
                 <div class="map-content">
                     <div class="pin">📍</div>
-                    <p>
-                        Pavlova <br>
-                        Locations
-                    </p>
-                    <a href="https://maps.app.goo.gl/b2o99F8npoYLQi9S8" target="_blank" class="map-btn">
-                        KomHamada(1)
-                    </a>
-                    <a href="https://maps.app.goo.gl/nejgZ6DumQND9j978" target="_blank" class="map-btn">
-                        KomHamada(2)
-                    </a>
-                    <a href="https://www.google.com/maps/place/Pavlova/@30.8834584,30.6688469,17z/data=!3m1!4b1!4m6!3m5!1s0x14f63900152ee0ff:0x7d2e3a26c75e65ba!8m2!3d30.8834538!4d30.666272!16s%2Fg%2F11vxv1r5ht?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D"
-                        target="_blank" class="map-btn">
-                        Itay Elbarod
-                    </a>
+                    <p>Pavlova <br> Locations</p>
+                    <a href="https://maps.app.goo.gl/b2o99F8npoYLQi9S8" target="_blank" class="map-btn">KomHamada(1)</a>
+                    <a href="https://maps.app.goo.gl/nejgZ6DumQND9j978" target="_blank" class="map-btn">KomHamada(2)</a>
+                    <a href="https://www.google.com/maps/place/Pavlova/@30.8834584,30.6688469,17z" target="_blank"
+                        class="map-btn">Itay Elbarod</a>
                 </div>
             </div>
+        </div>
     </section>
-
-
 
     <footer>
         <div class="footer-inner">
             <div class="footer-top">
-
-
                 <div class="footer-brand">
                     <h2 class="footer-brand-name">Pavlova</h2>
-                    <span class="footer-brand-sub">DESSERTS & COFFEE</span>
+                    <span class="footer-brand-sub">DESSERTS &amp; COFFEE</span>
                     <pre>
                         A sanctuary of sweetness and craft. We
                         believe the finest moments are shared
                         over something beautifully made.
                     </pre>
                 </div>
-
 
                 <div class="footer-col">
                     <h3 class="footer-col-title">Explore</h3>
@@ -257,7 +247,6 @@
                         <li><a href="#contact">Visit Us</a></li>
                     </ul>
                 </div>
-
 
                 <div class="footer-col">
                     <h3 class="footer-col-title">Menu</h3>
@@ -272,28 +261,27 @@
                         <li><a href="#">DESSERTS</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-col">
                     <div class="footer-col-title">Opening Hours</div>
-
                     <div class="footer-hour-row">
                         <span class="day">Daily</span>
-                        <span class="time">8:00 AM – 11:00 PM</span>
+                        <span class="time">&nbsp;8:00 AM &ndash; 11:00 PM</span>
                     </div>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
                 <p class="footer-copy">
-                    © 2026 <span>Ahmed Ehab</span>. All rights reserved.
+                    &copy; 2026 <span>Ahmed Ehab</span>. All rights reserved.
                 </p>
             </div>
-
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
             const links = document.querySelectorAll('a[href]');
             links.forEach(link => {
                 link.addEventListener('click', e => {
@@ -305,6 +293,21 @@
                             window.location.href = href;
                         }, 400);
                     }
+                });
+            });
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburgerBtn.addEventListener('click', () => {
+                hamburgerBtn.classList.toggle('open');
+                navLinks.classList.toggle('open');
+                document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerBtn.classList.remove('open');
+                    navLinks.classList.remove('open');
+                    document.body.style.overflow = '';
                 });
             });
         });

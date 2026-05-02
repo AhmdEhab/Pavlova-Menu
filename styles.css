@@ -20,12 +20,15 @@ body {
 #navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 50px;
     background: #0f3028;
     z-index: 10000;
     position: fixed;
-    width: 95%;
-    margin-bottom: -20px;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
 }
 
 .nav-logo {
@@ -35,7 +38,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 26px;
     letter-spacing: 1px;
-    margin-top: 10px;
+    flex-shrink: 0;
 }
 
 .nav-logo span {
@@ -49,7 +52,9 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
-    margin-left: 950px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links a {
@@ -212,6 +217,25 @@ body {
     border-color: white;
 }
 
+.menu-action {
+    text-align: center;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-large {
+    padding: 12px 30px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(216, 155, 60, 0.2);
+}
+
 .hero-scroll {
     position: absolute;
     bottom: 30px;
@@ -372,6 +396,32 @@ body {
     margin: auto;
     margin-right: 70px;
     margin-top: 30px;
+}
+
+.swipe-indicator {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #c9892a;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 25px;
+    animation: swipeAnim 1.5s infinite;
+    font-family: 'Jost', sans-serif;
+}
+
+@keyframes swipeAnim {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
 }
 
 .categories-grid {
@@ -717,9 +767,6 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-left: 900px;
-    margin-top: -570px;
-    margin-bottom: 250px;
 }
 
 .map-card::before {
@@ -881,51 +928,503 @@ body {
 }
 
 
-.card {
-    width: 210px;
-    height: 254px;
-    border-radius: 4px;
-    background: #e8ddd0;
-    display: flex;
-    gap: 50px;
-    padding: .4em;
-    margin: auto;
-    width: 900px;
-    height: 500px;
+/* ============================================
+   GALLERY GRID
+   ============================================ */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 260px 260px;
+    gap: 12px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.card p {
-    height: 100%;
-    flex: 1;
+.gallery-item {
+    position: relative;
     overflow: hidden;
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 2px;
-    transition: all .5s;
-    background-color: #0b2f25;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 1px solid #c9892a;
+    background: #0b2f25;
+}
+
+.gallery-large {
+    grid-row: 1 / 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 47, 37, 0.85) 0%, transparent 60%);
     display: flex;
+    align-items: flex-end;
+    padding: 22px 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #f4c27a;
+    letter-spacing: 1.5px;
+    font-style: italic;
+}
+
+
+
+.hamburger {
+    display: none;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10001;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #f4c27a;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+
+.section-tag1 {
+    margin-left: 0;
+}
+
+.contact-text h2 {
+    margin-left: 0;
+}
+
+.contact-text p {
+    margin-left: 0;
+}
+
+#abcd {
+    margin-left: 0;
+}
+
+.contact-items {
+    margin-left: 0;
+}
+
+.social-links {
+    margin-left: 0;
+}
+
+#contact {
+    padding: 100px 60px;
+}
+
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
     align-items: center;
 }
 
-.card p:hover {
-    flex: 4;
+.contact-text {
+    order: 2;
 }
 
-.card p span {
-    min-width: 14em;
-    padding: .5em;
-    text-align: center;
-    transform: rotate(-90deg);
-    transition: all .5s;
-    text-transform: uppercase;
-    color: #c9892a;
-    letter-spacing: .1em;
+.map-card {
+    order: 1;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    background-color: #184c3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.card p:hover span {
-    transform: rotate(0);
+.reveal1 {
+    display: none;
+}
+
+
+
+.footer-brand {
+    max-width: 300px;
+    margin-left: 0;
+}
+
+.footer-brand pre {
+    margin-left: 0;
+}
+
+.footer-col-title {
+    margin-left: 0;
+}
+
+.footer-col a {
+    margin-left: 0;
+}
+
+.footer-hour-row {
+    margin-left: 0;
+}
+
+
+@media (max-width: 1024px) {
+    #navbar {
+        padding: 15px 30px;
+    }
+
+    .hero-arabic-title {
+        font-size: 78px;
+    }
+
+    .hero-arabic-title span {
+        font-size: 54px;
+    }
+
+    #about {
+        padding: 80px 40px;
+    }
+
+    .about-inner {
+        gap: 40px;
+    }
+
+    .img-placeholder {
+        width: 340px;
+        height: 420px;
+    }
+
+    #categories {
+        padding: 80px 40px;
+    }
+
+    #testimonials {
+        padding: 80px 40px;
+    }
+
+    .testi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact {
+        padding: 80px 40px;
+    }
+
+    .footer-inner {
+        padding: 50px 40px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+
+    #navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #0b2820;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        z-index: 9999;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .desktop-order-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero-content {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .hero-arabic-title {
+        font-size: 58px;
+        line-height: 1.15;
+    }
+
+    .hero-arabic-title span {
+        font-size: 40px;
+        margin-top: -8px;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        padding: 5px 12px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
+        margin-right: 0;
+        white-space: normal;
+    }
+
+    .btn-primary {
+        padding: 14px 28px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+
+    #about {
+        padding: 60px 20px;
+    }
+
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .img-placeholder {
+        width: 100%;
+        max-width: 340px;
+        height: 380px;
+    }
+
+    .about-text h2::after {
+        margin: 15px auto 25px;
+    }
+
+    .badge {
+        right: 10px;
+        bottom: 10px;
+    }
+
+
+    #categories {
+        padding: 60px 20px;
+    }
+
+    .categories-grid {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 20px 30px;
+        gap: 20px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding: 0 20px;
+        scrollbar-width: none;
+    }
+
+    .categories-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .categories-card1,
+    .categories-card2,
+    .categories-card3 {
+        flex: 0 0 85%;
+        height: 380px;
+        scroll-snap-align: center;
+    }
+
+    .menu-head h2 {
+        font-size: 36px;
+    }
+
+    .menu-head pre {
+        margin-right: 0;
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .swipe-indicator {
+        display: flex;
+    }
+
+
+    #testimonials {
+        padding: 60px 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .card p {
+        flex: none;
+        width: 100%;
+        height: 220px;
+    }
+
+    .card p span {
+        transform: rotate(0);
+        min-width: auto;
+    }
+
+    .testi-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+
+
+    #contact {
+        padding: 60px 20px;
+    }
+
+    .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-text {
+        order: 1;
+    }
+
+    .map-card {
+        order: 2;
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .contact-text h2 {
+        font-size: 36px;
+    }
+
+    .social-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .footer-inner {
+        padding: 50px 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-brand pre {
+        white-space: normal;
+    }
+
+    .footer-col {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .hero-arabic-title {
+        font-size: 70px;
+    }
+
+    .hero-arabic-title span {
+        font-size: 52px;
+    }
+
+    .hero-desc {
+        font-size: 15px;
+    }
+
+    .categories-card1,
+    .categories-card2,
+    .categories-card3 {
+        height: 280px;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .menu-head h2 {
+        font-size: 30px;
+    }
 }
